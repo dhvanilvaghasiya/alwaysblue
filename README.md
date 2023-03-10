@@ -1,8 +1,13 @@
 # AlwaysBlue - A web app that aims to ease some of your tasks.
 
-## Stack Used
+## About
+AlwaysBlue is a basic web app that is developed using the MERN stack and Bootstrap. With features like 15+ Text-based utility functions (like Email Extractor, Text-to-Speech, Case Conversion etc), QR Code Generator, Comments Remover etc, I am adding new functionalities every week. Talking about the name, being a die hard fan of Silicon Valley series, I call this AlwaysBlue. 
 
-## Available Scripts
+## Stack Used
+ReactJs
+Bootstrap
+
+## Steps
 
 In the project directory, you can run:
 
