@@ -9,7 +9,14 @@ Bootstrap
 
 ## Steps
 
-In the project directory, you can run:
+(1) Run the following command to install node modules in the project directory
+
+### `npm install`
+
+By default, npm install will install all modules listed as dependencies in package.json.
+
+
+(2) Now, in the project directory, you can run:
 
 ### `npm start`
 
@@ -18,5 +25,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+## Happy being AlwaysBlue!
 
 
