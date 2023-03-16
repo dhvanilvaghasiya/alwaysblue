@@ -65,11 +65,11 @@ export default function Navbar(props) {
               <li className="nav-item">
                 <Link
                   className="nav-link active"
-                  to="/invoice-generator"
+                  to="/nrows-notes-keeper"
                   tabIndex="-1"
                   aria-disabled="true"
                 >
-                  Invoice Generator
+                  Notes Keeper
                 </Link>
               </li>
               <li className="nav-item">

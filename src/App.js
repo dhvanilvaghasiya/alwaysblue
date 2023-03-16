@@ -5,7 +5,7 @@ import Alert from "./components/Alert";
 import Navbar from "./components/Navbar";
 import Textarea from "./components/Textarea";
 import CodeGenerator from "./components/CodeGenerator";
-import InvoiceGenerator from "./components/InvoiceGenerator";
+import Noteskeeper from "./components/Noteskeeper";
 import CommentsRemover from "./components/CommentsRemover";
 import About from "./components/About";
 
@@ -79,12 +79,12 @@ function App() {
           ></Route>
 
           <Route
-            path="/invoice-generator"
+            path="/nrows-notes-keeper"
             element={
-              <InvoiceGenerator
+              <Noteskeeper
                 theme={theme}
               
-              ></InvoiceGenerator>
+              ></Noteskeeper>
             }
           ></Route>
           <Route path="/about" element={<About theme={theme}></About>}></Route>

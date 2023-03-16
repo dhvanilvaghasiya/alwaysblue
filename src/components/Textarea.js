@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 export default function Textarea(props) {
   // OnChange is used to make a user change the text as it tracks the changes
   const handleOnChange = (event) => {
@@ -135,7 +136,7 @@ export default function Textarea(props) {
             className={`btn btn-${props.theme} mt-3 me-3`}
             onClick={handleEmailExtraction}
           >
-            Extract Emails
+            Extract Emails{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"
@@ -155,7 +156,7 @@ export default function Textarea(props) {
             className={`btn btn-${props.theme} mt-3 me-3`}
             onClick={handleReadText}
           >
-            Read Text
+            Read Text{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"
@@ -193,7 +194,7 @@ export default function Textarea(props) {
             className={`btn btn-${props.theme} mt-3 me-3`}
             onClick={handleRemoveSpaces}
           >
-            Remove Extra Spaces
+            Remove Extra Spaces{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"
@@ -213,7 +214,7 @@ export default function Textarea(props) {
             className={`btn btn-success mt-3 me-3`}
             onClick={handleCopyText}
           >
-            Copy Text
+            Copy Text{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"
@@ -237,7 +238,7 @@ export default function Textarea(props) {
             className={`btn btn-success mt-3`}
             onClick={downloadTxtFile}
           >
-            Download File
+            Download File{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"

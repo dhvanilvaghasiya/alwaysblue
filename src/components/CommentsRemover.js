@@ -49,6 +49,7 @@ export default function CommentsRemover(props) {
           fontFamily: "Rampart One, cursive",
           color: props.theme === "primary" ? "#0d6efd" : "white",
         }}>( Supported Comments: /*...*/ & // ) </p>
+        
       <div className="modal-body row">
         <div className="col-md-6">
           <div>
@@ -75,7 +76,7 @@ export default function CommentsRemover(props) {
                 className={`btn btn-${props.theme} mt-3 me-3`}
                 onClick={handleCommentsRemoval}
               >
-                Remove Comments
+                Remove Comments{" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"
