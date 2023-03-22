@@ -7,6 +7,7 @@ import Textarea from "./components/Textarea";
 import CodeGenerator from "./components/CodeGenerator";
 import Noteskeeper from "./components/Noteskeeper";
 import CommentsRemover from "./components/CommentsRemover";
+
 import About from "./components/About";
 
 import {
@@ -16,6 +17,7 @@ import {
   Link,
   BrowserRouter,
 } from "react-router-dom";
+
 
 function App() {
   // state hook to handle theme
@@ -79,7 +81,7 @@ function App() {
           ></Route>
 
           <Route
-            path="/nrows-notes-keeper"
+            path="/notes-keeper"
             element={
               <Noteskeeper
                 theme={theme}
@@ -90,6 +92,7 @@ function App() {
           <Route path="/about" element={<About theme={theme}></About>}></Route>
         </Routes>
       </BrowserRouter>
+      
     </>
   );
 }

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 export default function Textarea(props) {
   // OnChange is used to make a user change the text as it tracks the changes
   const handleOnChange = (event) => {
@@ -34,16 +33,17 @@ export default function Textarea(props) {
 
   // function to copy text
   function handleCopyText() {
-    let copyText = document.getElementById("exampleFormControlTextarea1");
-    copyText.select();
+
     // Copy the text inside the text field
-    navigator.clipboard.writeText(copyText.value);
+    navigator.clipboard.writeText(text); //used navigator api
     props.showAlert("Text Copied to Clipboard !");
   }
 
   // function to extract emails
   const handleEmailExtraction = () => {
-    let extractEmail = text.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi);
+    let extractEmail = text.match(
+      /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi
+    );
     setText(extractEmail.toString());
   };
 
@@ -65,12 +65,6 @@ export default function Textarea(props) {
     element.click();
   };
 
-  //  function to handle word count
-  function getWordCount(text) {
-    return text.split(" ").filter(function (n) {
-      return n != "";
-    }).length;
-  }
 
   const [text, setText] = useState("");
   return (
@@ -103,10 +97,10 @@ export default function Textarea(props) {
         <div className="utility-buttons">
           {/* buttons to convert text to lower and upper case*/}
           <div className="btn-group me-3">
-            <button className={`btn btn-${props.theme} mt-3`} type="button">
+            <button disabled={text.length===0} className={`btn btn-${props.theme} mt-3`} type="button">
               Case Conversion
             </button>
-            <button
+            <button disabled={text.length===0}
               type="button"
               className={`btn  btn-${props.theme} mt-3 dropdown-toggle dropdown-toggle-split`}
               data-bs-toggle="dropdown"
@@ -132,6 +126,7 @@ export default function Textarea(props) {
           </div>
           {/* button to clear all text */}
           <button
+          disabled={text.length===0}
             type="button"
             className={`btn btn-${props.theme} mt-3 me-3`}
             onClick={handleEmailExtraction}
@@ -152,6 +147,7 @@ export default function Textarea(props) {
 
           {/* button to read all text */}
           <button
+          disabled={text.length===0}
             type="button"
             className={`btn btn-${props.theme} mt-3 me-3`}
             onClick={handleReadText}
@@ -171,6 +167,7 @@ export default function Textarea(props) {
 
           {/* button to remove punctuation marks */}
           <button
+          disabled={text.length===0}
             type="button"
             className={`btn btn-${props.theme} mt-3 me-3`}
             onClick={handlePunctuation}
@@ -190,6 +187,7 @@ export default function Textarea(props) {
 
           {/* button to remove extra spaces  */}
           <button
+          disabled={text.length===0}
             type="button"
             className={`btn btn-${props.theme} mt-3 me-3`}
             onClick={handleRemoveSpaces}
@@ -210,6 +208,7 @@ export default function Textarea(props) {
 
           {/* button to copy text */}
           <button
+          disabled={text.length===0}
             type="button"
             className={`btn btn-success mt-3 me-3`}
             onClick={handleCopyText}
@@ -234,6 +233,7 @@ export default function Textarea(props) {
 
           {/* button to download text */}
           <button
+          disabled={text.length===0}
             type="button"
             className={`btn btn-success mt-3`}
             onClick={downloadTxtFile}
@@ -252,44 +252,49 @@ export default function Textarea(props) {
             </svg>
           </button>
 
+          <div className="container mt-3 text-center">
+            <p
+              className="text-center fs-5"
+              style={{
+                fontFamily: "Rampart One, cursive",
+                color: props.theme === "primary" ? "#0d6efd" : "white",
+              }}
+            >
+              YOUR TEXT SUMMARY
+            </p>
 
-            <div className="container mt-3 text-center">
-              <p
-                className="text-center fs-5"
-                style={{
-                  fontFamily: "Rampart One, cursive",
-                  color: props.theme === "primary" ? "#0d6efd" : "white",
-                }}
+            <div className="">
+              <button
+              disabled={text.length===0}
+                type="button"
+                className={`btn btn-${props.theme} position-relative`}
               >
-                YOUR TEXT SUMMARY 
-              </p>
-
-              <div className="">
-                <button
-                  type="button"
-                  className={`btn btn-${props.theme} position-relative`}
-                >
-                  Total Words
-                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    {getWordCount(text)}
-                    <span className="visually-hidden"></span>
-                  </span>
-                </button>
-                <button
-                  type="button"
-                  className={`btn btn-${props.theme} position-relative ms-4`}
-                >
-                  Total Characters
-                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    {text.length}
-                    <span className="visually-hidden"></span>
-                  </span>
-                </button>
-              </div>
+                Total Words
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  {/* text.split(" ") returns an array. If there is any element whose length is 0, then it will not be added in the array. This is done using the filter function that calculates length of elements in the array and returns either true/false */}
+                  {
+                    text.split(/\s+/).filter((element) => {
+                      return element.length !== 0;
+                    }).length
+                  }
+                  <span className="visually-hidden"></span>
+                </span>
+              </button>
+              <button
+              disabled={text.length===0}
+                type="button"
+                className={`btn btn-${props.theme} position-relative ms-4`}
+              >
+                Total Characters
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  {text.length}
+                  <span className="visually-hidden"></span>
+                </span>
+              </button>
             </div>
           </div>
         </div>
-      
+      </div>
     </>
   );
 }

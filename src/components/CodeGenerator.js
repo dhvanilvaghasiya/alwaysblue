@@ -6,7 +6,7 @@ export default function CodeGenerator(props) {
   const [value, setValue] = useState();
   const [back, setBack] = useState("#FFFFFF");
   const [fore, setFore] = useState("#000000");
-  const [size, setSize] = useState(225);
+  const [size, setSize] = useState(220);
 
   // function to download qr-code
   const downloadQR = () => {
@@ -22,19 +22,56 @@ export default function CodeGenerator(props) {
     document.body.removeChild(downloadLink);
   };
 
+  // this is a object that holds the style for label elements
+  let labelStyle = {
+    fontFamily: "Lato, sans-serif",
+
+    color: props.theme === "primary" ? "#0d6efd" : "white",
+  };
+
+  // this is a object that holds the style for input elements
+  let inputStyle = {
+    backgroundColor: props.theme === "primary" ? "white" : "#212529",
+    color: props.theme === "primary" ? "black" : "white",
+    borderWidth: 2,
+    borderColor: props.theme === "primary" ? "#0d6efd" : "white",
+  };
+
+  // this is a object that holds the style for heading elements
+  let headingStyle={
+    fontFamily: "Rampart One, cursive",
+    color: props.theme === "primary" ? "#0d6efd" : "white",
+
+  }
+
   return (
     <>
       <div className="container mt-1">
         <p
           className="text-center fs-1 mt-1"
-          style={{
-            fontFamily: "Rampart One, cursive",
-            color: props.theme === "primary" ? "#0d6efd" : "white",
-          }}
+          style={headingStyle}
         >
           QR Code Generator
         </p>
-        <div className="qr-code">
+        <div
+          className="text-center fs-5"
+          style={headingStyle}
+        >
+          Customise your QR Code from a range of{" "}
+          <span style={{ color: " #FF0000" }}>1</span>
+          <span style={{ color: "#FF7F00" }}>5</span>
+          <span style={{ color: "#FFD700" }}>0</span>
+          <span style={{ color: "#2E8B57" }}>+</span>
+          <span style={{ color: "#0000FF" }}> </span>
+          <span style={{ color: "#FF6347" }}>c</span>
+          <span style={{ color: "#9400D3" }}>o</span>
+          <span style={{ color: "#FF00FF" }}>l</span>
+          <span style={{ color: "#0d6efd" }}>o</span>
+          <span style={{ color: "#00FF00 " }}>u</span>
+          <span style={{ color: "#FF8C00" }}>r</span>
+          <span style={{ color: "#DAA520 " }}>s</span>
+        </div>
+        <div className="qr-code mt-2">
           {/* To divide the page into two columns */}
           <div className="modal-body row">
             {/* left side column to get QR Code details */}
@@ -44,11 +81,7 @@ export default function CodeGenerator(props) {
                 <label
                   htmlFor="exampleURL"
                   className="form-label fs-6"
-                  style={{
-                    fontFamily: "Lato, sans-serif",
-
-                    color: props.theme === "primary" ? "#0d6efd" : "white",
-                  }}
+                  style={labelStyle}
                 >
                   Enter Data or URL 🔗
                 </label>
@@ -59,25 +92,14 @@ export default function CodeGenerator(props) {
                   placeholder="e.g: https://www.linkedin.com/in/dhvanil-vaghasiya/"
                   aria-label=".form-control-lg example"
                   onChange={(e) => setValue(e.target.value)}
-                  style={{
-                    backgroundColor:
-                      props.theme === "primary" ? "white" : "#212529",
-                    color: props.theme === "primary" ? "black" : "white",
-                    borderWidth: 3,
-                    borderColor:
-                      props.theme === "primary" ? "#0d6efd" : "white",
-                  }}
+                  style={inputStyle}
                 />
 
                 {/* text field to take background color */}
                 <label
                   htmlFor="bgColour"
                   className="form-label fs-6 mt-3"
-                  style={{
-                    fontFamily: "Lato, sans-serif",
-
-                    color: props.theme === "primary" ? "#0d6efd" : "white",
-                  }}
+                  style={labelStyle}
                 >
                   Background Colour 🎨
                 </label>
@@ -88,25 +110,14 @@ export default function CodeGenerator(props) {
                   placeholder="e.g: white, blue, green, brown, etc"
                   aria-label=".form-control-lg example"
                   onChange={(e) => setBack(e.target.value)} //a function that helps tracking the changes
-                  style={{
-                    backgroundColor:
-                      props.theme === "primary" ? "white" : "#212529",
-                    color: props.theme === "primary" ? "black" : "white",
-                    borderWidth: 3,
-                    borderColor:
-                      props.theme === "primary" ? "#0d6efd" : "white",
-                  }}
+                  style={inputStyle}
                 />
 
                 {/* text field to take foreground color */}
                 <label
                   htmlFor="ForegroundColour"
                   className="form-label fs-6 mt-3"
-                  style={{
-                    fontFamily: "Lato, sans-serif",
-
-                    color: props.theme === "primary" ? "#0d6efd" : "white",
-                  }}
+                  style={labelStyle}
                 >
                   Foreground Colour 🎨
                 </label>
@@ -117,25 +128,14 @@ export default function CodeGenerator(props) {
                   placeholder="e.g: white, blue, green, brown, etc"
                   aria-label=".form-control-lg example"
                   onChange={(e) => setFore(e.target.value)}
-                  style={{
-                    backgroundColor:
-                      props.theme === "primary" ? "white" : "#212529",
-                    color: props.theme === "primary" ? "black" : "white",
-                    borderWidth: 3,
-                    borderColor:
-                      props.theme === "primary" ? "#0d6efd" : "white",
-                  }}
+                  style={inputStyle}
                 />
 
                 {/* text field to adjust size of qr code*/}
                 <label
                   htmlFor="qrSize"
                   className="form-label fs-6 mt-3"
-                  style={{
-                    fontFamily: "Lato, sans-serif",
-
-                    color: props.theme === "primary" ? "#0d6efd" : "white",
-                  }}
+                  style={labelStyle}
                 >
                   Size of QR Code 📏
                 </label>
@@ -143,21 +143,14 @@ export default function CodeGenerator(props) {
                 <input
                   className="form-control width-50 mb-4"
                   type="number"
-                  placeholder="e.g: 80, 158, 172, 220, 260, etc"
+                  placeholder="e.g: 80, 158, 172, 220, etc"
                   aria-label=".form-control-lg example"
                   onChange={(e) =>
                     setSize(
                       parseInt(e.target.value === "" ? 0 : e.target.value, 10)
                     )
                   }
-                  style={{
-                    backgroundColor:
-                      props.theme === "primary" ? "white" : "#212529",
-                    color: props.theme === "primary" ? "black" : "white",
-                    borderWidth: 3,
-                    borderColor:
-                      props.theme === "primary" ? "#0d6efd" : "white",
-                  }}
+                  style={inputStyle}
                 />
               </form>
             </div>
@@ -166,10 +159,7 @@ export default function CodeGenerator(props) {
             <div className="col-md-6 text-center ">
               <div
                 className="fs-6 "
-                style={{
-                  fontFamily: "Rampart One, cursive",
-                  color: props.theme === "primary" ? "#0d6efd" : "white",
-                }}
+                style={headingStyle}
               >
                 Your QR Code will be displayed here...
               </div>
@@ -196,7 +186,7 @@ export default function CodeGenerator(props) {
                   )}
                 </div>
                 {/* button to download QR Code */}
-                <div class="mb-4">
+                <div className="mb-4">
                   {value && (
                     <button
                       type="button"
@@ -209,7 +199,7 @@ export default function CodeGenerator(props) {
                         width="30"
                         height="21"
                         fill="currentColor"
-                        class="bi bi-qr-code"
+                        className="bi bi-qr-code"
                         viewBox="0 0 16 16"
                       >
                         <path d="M2 2h2v2H2V2Z" />

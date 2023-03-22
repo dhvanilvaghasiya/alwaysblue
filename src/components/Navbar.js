@@ -65,11 +65,21 @@ export default function Navbar(props) {
               <li className="nav-item">
                 <Link
                   className="nav-link active"
-                  to="/nrows-notes-keeper"
+                  to="/notes-keeper"
                   tabIndex="-1"
                   aria-disabled="true"
                 >
                   Notes Keeper
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link active"
+                  to="/"
+                  tabIndex="-1"
+                  aria-disabled="true"
+                >
+                  ABC-Community
                 </Link>
               </li>
               <li className="nav-item">

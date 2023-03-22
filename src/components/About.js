@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 
-
-
 export default function About(props) {
+  // this is a object that holds the style for taccordians
+  let accordionBodyStyle = {
+    backgroundColor: props.theme === "primary" ? "white" : "rgb(171, 176, 184)",
+    borderColor: props.theme === "primary" ? "#0d6efd" : "white",
+  };
+
   return (
     <div className="container mt-1 ">
       <p
-          className="text-center fs-1 mt-1"
-          style={{
-            fontFamily: "Rampart One, cursive",
-           color: props.theme === "primary" ? "#0d6efd" : "white",
-          }}
-        >
-          About Us
-        </p>
+        className="text-center fs-1 mt-1"
+        style={{
+          fontFamily: "Rampart One, cursive",
+          color: props.theme === "primary" ? "#0d6efd" : "white",
+        }}
+      >
+        About Us
+      </p>
       <div className="accordion " id="accordionExample">
         <div className="accordion-item ">
           <h2 className="accordion-header" id="headingOne">
@@ -24,11 +28,6 @@ export default function About(props) {
               data-bs-target="#collapseOne"
               aria-expanded="true"
               aria-controls="collapseOne"
-              style={{
-                backgroundColor:
-                  props.theme === "primary" ? "white" : "#212529",
-                borderColor: props.theme === "primary" ? "#0d6efd" : "white",
-              }}
             >
               <h5>What is AlwaysBlue❓</h5>
             </button>
@@ -38,20 +37,15 @@ export default function About(props) {
             className="accordion-collapse collapse show"
             aria-labelledby="headingOne"
             data-bs-parent="#accordionExample"
-            style={{
-              backgroundColor:
-                props.theme === "primary" ? "white" : "rgb(171, 176, 184)",
-              borderWidth: 3,
-              borderColor: props.theme === "primary" ? "#0d6efd" : "white",
-            }}
+            style={accordionBodyStyle}
           >
             <div className="accordion-body">
               AlwaysBlue is a basic web app that is developed using the{" "}
-              <strong>MERN</strong> stack. With features like 15+ Text-based utility
-              functions, QR Code Generator, Comments Remover etc, I am adding
-              new functionalities every week. Talking about the name, being a
-              die hard fan of Silicon Valley series, I call this AlwaysBlue. A
-              contradiction is set when you switch to Dark Mode 😜
+              <strong>MERN</strong> stack. With features like 15+ Text-based
+              utility functions, QR Code Generator, Comments Remover etc, I am
+              adding new functionalities every week. Talking about the name,
+              being a die hard fan of Silicon Valley series, I call this
+              AlwaysBlue. A contradiction is set when you switch to Dark Mode 😜
             </div>
           </div>
         </div>
@@ -64,12 +58,6 @@ export default function About(props) {
               data-bs-target="#collapseTwo"
               aria-expanded="false"
               aria-controls="collapseTwo"
-              style={{
-                backgroundColor:
-                  props.theme === "primary" ? "white" : "#212529",
-                color: props.theme === "primary" ? "black" : "white",
-                borderColor: props.theme === "primary" ? "#0d6efd" : "white",
-              }}
             >
               <h5>Why use AlwaysBlue❓</h5>
             </button>
@@ -79,12 +67,7 @@ export default function About(props) {
             className="accordion-collapse collapse"
             aria-labelledby="headingTwo"
             data-bs-parent="#accordionExample"
-            style={{
-              backgroundColor:
-                props.theme === "primary" ? "white" : "rgb(171, 176, 184)",
-              borderWidth: 5,
-              borderColor: props.theme === "primary" ? "#0d6efd" : "white",
-            }}
+            style={accordionBodyStyle}
           >
             <div className="accordion-body">
               <p>
@@ -105,7 +88,9 @@ export default function About(props) {
                 <h6>
                   <strong>♾️ No Registration:</strong>
                 </h6>{" "}
-                We understand your needs. Who loves to Sign-up or Login to use a utility app? probably no one and so there is no registration required. A simple process: Visit, Use and Repeat.
+                We understand your needs. Who loves to Sign-up or Login to use a
+                utility app? probably no one and so there is no registration
+                required. A simple process: Visit, Use and Repeat.
               </p>
             </div>
           </div>
@@ -119,12 +104,6 @@ export default function About(props) {
               data-bs-target="#collapseThree"
               aria-expanded="false"
               aria-controls="collapseThree"
-              style={{
-                backgroundColor:
-                  props.theme === "primary" ? "white" : "#212529",
-                color: props.theme === "primary" ? "black" : "white",
-                borderColor: props.theme === "primary" ? "#0d6efd" : "white",
-              }}
             >
               <h5>Ready to join AB Contributors Community (ABC²)❓</h5>
             </button>
@@ -134,20 +113,22 @@ export default function About(props) {
             className="accordion-collapse collapse"
             aria-labelledby="headingThree"
             data-bs-parent="#accordionExample"
-            style={{
-              backgroundColor:
-                props.theme === "primary" ? "white" : "rgb(171, 176, 184)",
-              borderWidth: 3,
-              borderColor: props.theme === "primary" ? "#0d6efd" : "white",
-            }}
+            style={accordionBodyStyle}
           >
             <div className="accordion-body">
-              ABC²
-              is a place where each and every effort of yours is counted. A
+              ABC² is a place where each and every effort of yours is counted. A
               community for and by the coders. Everyone is building something,
-              but we fail to appreciate the efforts made by beginners. Let's make this place like <strong><i>"There's no place like 127.0.0.1"</i></strong> and then we all will proudly say <strong><i>"There's no place like ABC²"</i></strong>. {" "} Join the
-              AlwaysBlue Contributors Community to learn, share, and show your
-              skills. Well, to do so, you must first Sign-up or Login. 
+              but we fail to appreciate the efforts made by beginners. Let's
+              make this place like{" "}
+              <strong>
+                <i>"There's no place like 127.0.0.1"</i>
+              </strong>{" "}
+              and then we all will proudly say{" "}
+              <strong>
+                <i>"There's no place like ABC²"</i>
+              </strong>
+              . Join the AlwaysBlue Contributors Community to learn, share, and
+              show your skills. Well, to do so, you must first Sign-up or Login.
             </div>
           </div>
         </div>

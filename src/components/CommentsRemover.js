@@ -32,25 +32,33 @@ export default function CommentsRemover(props) {
     element.click();
   };
 
+  // this is a object that holds the style for heading elements
+  let headingStyle = {
+    fontFamily: "Rampart One, cursive",
+    color: props.theme === "primary" ? "#0d6efd" : "white",
+  };
+
+  // this is a object that holds the style for two textarea
+  let textareaStyle = {
+    backgroundColor: props.theme === "primary" ? "white" : "#212529",
+    color: props.theme === "primary" ? "black" : "white",
+    borderWidth: 3,
+    borderColor: props.theme === "primary" ? "#0d6efd" : "white",
+  };
+
   const [text, setText] = useState("");
   return (
     <div className="container mt-1">
-      <p
-        className="text-center fs-1 mb-0 "
-        style={{
-          fontFamily: "Rampart One, cursive",
-          color: props.theme === "primary" ? "#0d6efd" : "white",
-        }}
-      >
+      <p className="text-center fs-1 mb-0 " style={headingStyle}>
         Comments Remover
       </p>
-      <p className="text-center"
-        style={{
-          fontFamily: "Rampart One, cursive",
-          color: props.theme === "primary" ? "#0d6efd" : "white",
-        }}>( Supported Comments: /*...*/ & // ) </p>
-        
+      <p className="text-center" style={headingStyle}>
+        ( Supported Comments: /*...*/ & // ){" "}
+      </p>
+
       <div className="modal-body row">
+
+        {/* left textarea */}
         <div className="col-md-6">
           <div>
             {/* textarea to add code with comments */}
@@ -61,13 +69,7 @@ export default function CommentsRemover(props) {
               placeholder="Start typing, or copy & paste your code here...."
               value={text}
               onChange={handleOnChange}
-              style={{
-                backgroundColor:
-                  props.theme === "primary" ? "white" : "#212529",
-                color: props.theme === "primary" ? "black" : "white",
-                borderWidth: 3,
-                borderColor: props.theme === "primary" ? "#0d6efd" : "white",
-              }}
+              style={textareaStyle}
             ></textarea>
             <div className="text-center mb-3">
               {/* button to remove comments code */}
@@ -113,6 +115,9 @@ export default function CommentsRemover(props) {
             </div>
           </div>
         </div>
+
+
+        {/* right textarea */}
         <div className="col-md-6">
           <div>
             {/* textarea to display code without comments */}
@@ -122,13 +127,7 @@ export default function CommentsRemover(props) {
               rows="12"
               // onChange={handleOnChange}
               placeholder="Here is your code without comments..."
-              style={{
-                backgroundColor:
-                  props.theme === "primary" ? "white" : "#212529",
-                color: props.theme === "primary" ? "black" : "white",
-                borderWidth: 3,
-                borderColor: props.theme === "primary" ? "#0d6efd" : "white",
-              }}
+              style={textareaStyle}
             ></textarea>
           </div>
           <div className="text-center mb-3">
