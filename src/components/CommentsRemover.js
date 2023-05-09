@@ -57,7 +57,6 @@ export default function CommentsRemover(props) {
       </p>
 
       <div className="modal-body row">
-
         {/* left textarea */}
         <div className="col-md-6">
           <div>
@@ -66,7 +65,7 @@ export default function CommentsRemover(props) {
               className="form-control"
               id="exampleFormControlTextarea1"
               rows="12"
-              placeholder="Start typing, or copy & paste your code here...."
+              placeholder="Start typing, or copy & paste your code here..."
               value={text}
               onChange={handleOnChange}
               style={textareaStyle}
@@ -115,7 +114,6 @@ export default function CommentsRemover(props) {
             </div>
           </div>
         </div>
-
 
         {/* right textarea */}
         <div className="col-md-6">

@@ -5,8 +5,11 @@ import Alert from "./components/Alert";
 import Navbar from "./components/Navbar";
 import Textarea from "./components/Textarea";
 import CodeGenerator from "./components/CodeGenerator";
-import Noteskeeper from "./components/Noteskeeper";
 import CommentsRemover from "./components/CommentsRemover";
+import CodeDiffChecker from "./components/CodeDiffChecker";
+import ABCCommunity from "./components/ABCCommunity";
+
+
 
 import About from "./components/About";
 
@@ -81,12 +84,22 @@ function App() {
           ></Route>
 
           <Route
-            path="/notes-keeper"
+            path="/code-differencing-tool"
             element={
-              <Noteskeeper
+              <CodeDiffChecker
                 theme={theme}
               
-              ></Noteskeeper>
+              ></CodeDiffChecker>
+            }
+          ></Route>
+
+          <Route
+            path="/abc-community"
+            element={
+              <ABCCommunity
+                theme={theme}
+              
+              ></ABCCommunity>
             }
           ></Route>
           <Route path="/about" element={<About theme={theme}></About>}></Route>

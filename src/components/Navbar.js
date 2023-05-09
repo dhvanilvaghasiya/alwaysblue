@@ -65,17 +65,17 @@ export default function Navbar(props) {
               <li className="nav-item">
                 <Link
                   className="nav-link active"
-                  to="/notes-keeper"
+                  to="/code-differencing-tool"
                   tabIndex="-1"
                   aria-disabled="true"
                 >
-                  Notes Keeper
+                  Code Difference Checker
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
                   className="nav-link active"
-                  to="/"
+                  to="/abc-community"
                   tabIndex="-1"
                   aria-disabled="true"
                 >

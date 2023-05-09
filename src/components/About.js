@@ -121,9 +121,9 @@ export default function About(props) {
               but we fail to appreciate the efforts made by beginners. Let's
               make this place like{" "}
               <strong>
-                <i>"There's no place like 127.0.0.1"</i>
+                <i>"127.0.0.1"</i>
               </strong>{" "}
-              and then we all will proudly say{" "}
+              (iykyk) and then we all will proudly say{" "}
               <strong>
                 <i>"There's no place like ABC²"</i>
               </strong>
