@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/alwaysblue-v2/static/css/main.b2e810c8.css",
+    "main.js": "/alwaysblue-v2/static/js/main.e44cecca.js",
+    "static/js/787.c80801f3.chunk.js": "/alwaysblue-v2/static/js/787.c80801f3.chunk.js",
+    "index.html": "/alwaysblue-v2/index.html",
+    "main.b2e810c8.css.map": "/alwaysblue-v2/static/css/main.b2e810c8.css.map",
+    "main.e44cecca.js.map": "/alwaysblue-v2/static/js/main.e44cecca.js.map",
+    "787.c80801f3.chunk.js.map": "/alwaysblue-v2/static/js/787.c80801f3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b2e810c8.css",
+    "static/js/main.e44cecca.js"
+  ]
+}
